@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-medium shadow-lg shadow-emerald-950/30 transition-all duration-300 transform active:scale-95;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, button, input, select, .lg\:col-span-4, .flex.gap-2, .glass-panel p-4.rounded-xl .flex.gap-2 {
+    display: none !important;
+  }
+  .lg\:col-span-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+  .glass-panel, .glass-card {
+    background: none !important;
+    backdrop-filter: none !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .text-slate-100, .text-slate-200, .text-slate-300, .text-slate-350, .text-slate-450 {
+    color: #0f172a !important;
+  }
+  .text-slate-400, .text-slate-500 {
+    color: #475569 !important;
+  }
+  .text-emerald-400, .text-teal-400 {
+    color: #047857 !important;
+    font-weight: 850 !important;
+  }
+  .text-rose-400 {
+    color: #b91c1c !important;
+    font-weight: 850 !important;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  .max-h-\[220px\] {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
